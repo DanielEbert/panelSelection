@@ -43,7 +43,7 @@ const PlotSelection = ({
       <div ref={menuRef}>
         <button
           onClick={() => toggleMenu()}
-          className={`absolute right-0 top-0 m-1 rounded bg-gray-200 p-1 opacity-80`}
+          className={`absolute right-0 top-0 m-1 rounded bg-gray-200 bg-opacity-0 p-1 opacity-50 transition hover:bg-opacity-80 hover:opacity-80`}
         >
           {showMenu ? '▼' : '▲'}
         </button>
