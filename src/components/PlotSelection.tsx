@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { IoSettingsOutline } from 'react-icons/io5'
 
 interface PlotSelectionProps {
   setPlot: (plot: string) => void
@@ -43,9 +44,9 @@ const PlotSelection = ({
       <div ref={menuRef}>
         <button
           onClick={() => toggleMenu()}
-          className={`absolute right-0 top-0 m-1 rounded bg-gray-200 bg-opacity-0 p-1 opacity-50 transition hover:bg-opacity-80 hover:opacity-80`}
+          className={`absolute right-0 top-0 m-1 rounded bg-gray-200 bg-opacity-0 p-1 opacity-70 transition hover:bg-opacity-80 hover:opacity-100`}
         >
-          {showMenu ? '▼' : '▲'}
+          <IoSettingsOutline size={22} />
         </button>
         {showMenu && (
           <div
@@ -55,8 +56,9 @@ const PlotSelection = ({
               {plotComponentKeys.map((plot: string) => {
                 return (
                   <li
-                    className="px-1 hover:bg-gray-100"
+                    className="select-none px-1 text-lg text-slate-900 hover:bg-gray-100"
                     onClick={() => setPlot(plot)}
+                    key={plot}
                   >
                     {plot}
                   </li>

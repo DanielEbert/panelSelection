@@ -28,7 +28,6 @@ const App = () => {
     const newPlots = [...plots]
     if (plotComponents[plot]) {
       newPlots[index] = plotComponents[plot]()
-      console.log(newPlots)
       setPlots(newPlots)
     }
   }
