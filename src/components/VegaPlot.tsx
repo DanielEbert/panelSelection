@@ -4,7 +4,7 @@ const VegaPlot = () => {
   const [toggle, setToggle] = useState<boolean>(false)
 
   return (
-    <div className="bg-blue-300">
+    <div className="h-full bg-blue-300">
       VegaPlot
       <div>
         <button

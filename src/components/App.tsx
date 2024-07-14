@@ -10,8 +10,11 @@ type PlotComponents = {
 
 const plotComponents: PlotComponents = {
   Pixie: () => <PixiePlot />,
-  Vega: () => <VegaPlot />
+  Vega: () => <VegaPlot />,
+  abc: () => <div>abc</div>
 }
+
+const plotComponentKeys: string[] = Object.keys(plotComponents)
 
 const App = () => {
   const [plots, setPlots] = useState<JSX.Element[]>([
@@ -33,22 +36,34 @@ const App = () => {
   return (
     <div className="flex h-screen flex-col">
       <div className="flex h-full w-full">
-        <PlotSelection setPlot={(plot: string) => changePlot(0, plot)}>
+        <PlotSelection
+          plotComponentKeys={plotComponentKeys}
+          setPlot={(plot: string) => changePlot(0, plot)}
+        >
           {plots[0]}
         </PlotSelection>
-        <PlotSelection setPlot={(plot: string) => changePlot(1, plot)}>
+        <PlotSelection
+          plotComponentKeys={plotComponentKeys}
+          setPlot={(plot: string) => changePlot(1, plot)}
+        >
           {plots[1]}
         </PlotSelection>
       </div>
       <div className="flex h-full w-full">
-        <PlotSelection setPlot={(plot: string) => changePlot(2, plot)}>
+        <PlotSelection
+          plotComponentKeys={plotComponentKeys}
+          setPlot={(plot: string) => changePlot(2, plot)}
+        >
           {plots[2]}
         </PlotSelection>
-        <PlotSelection setPlot={(plot: string) => changePlot(3, plot)}>
+        <PlotSelection
+          plotComponentKeys={plotComponentKeys}
+          setPlot={(plot: string) => changePlot(3, plot)}
+        >
           {plots[3]}
         </PlotSelection>
       </div>
-      <div>
+      <div className="flex h-32 p-2">
         <input type="range" min="0" max="100" className="w-full" />
       </div>
     </div>

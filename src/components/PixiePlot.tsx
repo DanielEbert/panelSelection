@@ -1,5 +1,5 @@
 const PixiePlot = () => {
-  return <div className="bg-red-300">PixiePlot</div>
+  return <div className="h-full bg-red-300">PixiePlot</div>
 }
 
 export default PixiePlot
